@@ -6,13 +6,19 @@ Projeto MVP para a disciplina de Banco de Dados - UNINASSAU Aracaju. Uma aplica�
 ## 🚀 Tecnologias Utilizadas
 - HTML5
 - CSS3
-- JavaScript (se for usar)
+- JavaScript
 
 ## 👥 Equipe
-- [Seu Nome] - Product Owner / Full Stack
-- [Nome do Colega 1] - Responsável pelos Wireframes
-- [Nome do Colega 2] - Responsável pela Documentação
-- ... (liste o time todo)
+- Ana Beatriz Sotero Oliveira
+- Bárbara Maria Araújo de Oliveira
+- Emilly Larissa Menezes Leite Castor
+- José Kauê Araújo Alves
+- Lauane Santos de Melo
+- Luiz Gustavo Lima Beber Oliveira
+- Nicolas Santos Melo
+- Otávio dos Santos Souza
+- Pedro Henrique Freire dos Santos
+- Ruan Santo Andrade
 
 ## 📁 Estrutura do Projeto
 - `/docs` - Documentação do projeto (Anexo 1, wireframes, relatórios)
