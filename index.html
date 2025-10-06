@@ -1,1 +1,461 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orquídeas - Saúde do Homem</title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f6f3fb;
+  color: #2e294e;
+}
+header {
+  background: linear-gradient(180deg, #7b2cbf, #9d4edd);
+  color: white;
+  text-align: center;
+  padding: 40px 10px 25px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+header img {
+  height: 130px;
+  width: auto;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+header h1 {
+  font-size: 34px;
+  margin: 5px 0 15px 0;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+nav a {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #7b2cbf;
+}
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #5a189a;
+  text-align: center;
+}
+
+button {
+  background-color: #9d4edd;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #7b2cbf;
+}
+.likert-question {
+  margin-bottom: 15px;
+}
+
+.likert-scale input {
+  margin: 0 5px;
+}
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+form input {
+  display: block;
+  margin-bottom: 15px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #cbb2fe;
+  font-size: 15px;
+}
+
+form input:focus {
+  border-color: #9d4edd;
+  outline: none;
+}
+
+form input::placeholder {
+  color: #aaa;
+}
+.tab-content {
+  display: none;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.card {
+  background: #faf5ff;
+  padding: 15px 20px;
+  border-radius: 15px;
+  border-left: 6px solid #b388eb;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #6a11cb;
+}
+.motivational {
+  background-color: #e7d3ff;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
+.reminder {
+  background: #d8b4fe;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+.post-box {
+  border: 1px solid #cbb2fe;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.post-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: 1px solid #cbb2fe;
+  font-family: inherit;
+  resize: none;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #7b2cbf, #9d4edd);
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.lembretes {
+  margin-top: 20px;
+  background: #f3e8ff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.lembretes h3 {
+  color: #6d28d9;
+}
+
+.lembretes input {
+  width: 70%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #b794f4;
+}
+
+.lembretes button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #7e22ce;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.lembretes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lembretes li {
+  background: #ede9fe;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://media.discordapp.net/attachments/1424538478909198347/1424570669685018665/ORR.png?ex=68e46e52&is=68e31cd2&hm=cd564d5d3de0dd64c902b97cd41eb245b26c211f4da96d6a7c88967badc27aa0&=&format=webp&quality=lossless&width=625&height=625" alt="Logo Orquídeas">
+  <h1>Orquídeas</h1>
+  <nav id="menu" style="display:none;">
+    <a href="#" onclick="showTab('fisica')">Saúde Física</a>
+    <a href="#" onclick="showTab('mental')">Saúde Mental</a>
+    <a href="#" onclick="showTab('atividades')">Atividades</a>
+    <a href="#" onclick="showTab('dicas')">Dicas</a>
+    <a href="#" onclick="showTab('empresa')">Empresa</a>
+    <a href="#" onclick="showTab('social')">Compartilhe</a>
+  </nav>
+</header>
+<div class="container">
+  <div id="likert-section">
+    <h2>Questionário de Saúde Masculina</h2>
+    <p>Responda as perguntas abaixo (1 = Discordo totalmente, 5 = Concordo totalmente):</p>
+    <div id="likert-questions"></div>
+    <button onclick="calcularLikert()">Enviar Respostas</button>
+    <div id="likert-result" class="motivational"></div>
+  </div>
+  <div id="cadastro-section" style="display:none;">
+    <h2>Crie sua conta para acessar o site</h2>
+    <p>
+      Nosso objetivo é ajudá-lo a compreender e valorizar o cuidado com a saúde física e mental masculina. 
+      Queremos promover hábitos saudáveis, bem-estar e a quebra de tabus sobre o autocuidado. 
+      Ao criar sua conta, você terá acesso a lembretes, dicas e um espaço seguro de diálogo.
+    </p>
+    <form id="cadastro-form">
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Criar senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+  <div id="conteudo-principal" style="display:none;">
+    <div id="fisica" class="tab-content active">
+      <h2>Saúde Física do Homem</h2>
+      <div class="motivational">Seu corpo é seu templo — cuide dele todos os dias.</div>
+      <div class="reminder">Lembrete: Marque seu check-up anual!</div>
+      <div class="card"><h3>Exames Preventivos</h3><p>Inclua exames de sangue, pressão e colesterol. A prevenção salva vidas!</p></div>
+      <div class="card"><h3>Alimentação Saudável</h3><p>Adote uma dieta rica em frutas, verduras e proteínas magras. Moderação é a chave.</p></div>
+      <div class="card"><h3>Atividade Física</h3><p>Movimente-se pelo menos 3 vezes por semana. Seu corpo agradece!</p></div>
+      <div class="lembretes">
+  <h3>Seus lembretes pessoais</h3>
+  <input type="text" id="lembreteFisico" placeholder="Digite um lembrete...">
+  <button onclick="adicionarLembrete('fisico')">Adicionar</button>
+  <ul id="listaFisico"></ul>
+</div>
+
+    </div>
+
+    <div id="mental" class="tab-content">
+      <h2>Saúde Mental</h2>
+      <div class="motivational">Cuidar da mente também é um ato de coragem.</div>
+      <div class="reminder">Lembrete: Tire um tempo para respirar e relaxar hoje.</div>
+      <div class="card"><h3>Controle do Estresse</h3><p>Pratique meditação, leitura e respiração profunda. Pequenos hábitos fazem diferença.</p></div>
+      <div class="card"><h3>Apoio Psicológico</h3><p>Buscar ajuda é sinal de força, não de fraqueza.</p></div>
+      <div class="lembretes">
+  <h3>Seus lembretes pessoais</h3>
+  <input type="text" id="lembretemental" placeholder="Digite um lembrete...">
+  <button onclick="adicionarLembrete('mental')">Adicionar</button>
+  <ul id="listamental"></ul>
+</div>
+
+    </div>
+
+    <div id="atividades" class="tab-content">
+      <h2>Atividades e Bem-Estar</h2>
+      <div class="motivational">Equilíbrio é o segredo de uma vida feliz.</div>
+      <div class="card"><h3>Exercícios</h3><p>Pratique atividades que tragam prazer, como natação, caminhada ou esportes coletivos.</p></div>
+      <div class="card"><h3>Lazer</h3><p>Reserve tempo para você, para o descanso e para se divertir.</p></div>
+      <div class="lembretes">
+  <h3>Seus lembretes pessoais</h3>
+  <input type="text" id="lembreteataividades" placeholder="Digite um lembrete...">
+  <button onclick="adicionarLembrete('atividades')">Adicionar</button>
+  <ul id="listaatividades"></ul>
+</div>
+
+    </div>
+
+    <div id="dicas" class="tab-content">
+      <h2>Dicas e Cuidados Diários</h2>
+      <div class="reminder">Dica do dia: Beba água e alongue-se!</div>
+      <div class="card"><h3>Rotina</h3><p>Tenha horários regulares para dormir e se alimentar.</p></div>
+      <div class="card"><h3>Check-ups</h3><p>Faça consultas médicas regularmente, mesmo sem sintomas.</p></div>
+    </div>
+
+    <div id="empresa" class="tab-content" >
+      <h1>Sobre a Orquídeas</h1>
+            <p>A empresa Orquídeas nasceu de uma ideia simples, mostrar que o cuidado também é força, assim como a flor,
+            nossa missão é cultivar equilíbrio, vitalidade e bem-estar em cada homem de forma física e emocional.</p>
+            <p>Desde a Antiguidade as orquídeas sempre despertaram fascínio na Grécia Antiga, acreditava-se que essa planta tinha ligação com a energia e a vitalidade masculina já nas tradições chinesas e indianas, 
+            era usada na medicina natural para fortalecer o corpo, aliviar o estresse e renovar o espírito, a orquídea sempre foi símbolo de resistência, elegância e cura escolhemos a orquídea como nossa inspiração justamente por ela unir o que parece oposto: delicadeza e força, 
+            beleza e resistência, sensibilidade e firmeza.</p>
+            <p>Ela cresce em lugares improváveis, adapta-se, floresce assim como deve ser o homem que se cuida, que reconhece suas emoções e valoriza sua saúde, 
+            na Orquídeas, acreditamos que cuidar-se é um ato de coragem, e que receber flores não diminui ninguém apenas lembra que a beleza também faz parte da força.</p>
+           <p>Queremos quebrar o tabu que associa o autocuidado à fragilidade. Porque, no fim das contas, homens também merecem flores.</p>
+            <h2>Equipe</h2>
+            <ul>
+                <li>Ana Beatriz Sotero Oliveira </li>
+                <li>Bárbara Maria Araújo de Oliveira </li>
+                <li>Emilly Larissa Menezes Leite Castor </li>
+                <li>José Kauê Araújo Alves</li>
+                <li>Lauane Santos de Melo</li>
+                <li>Luiz Gustavo Lima Beber Oliveira</li>
+                <li>Nicolas Santos Melo</li>
+                <li>Otávio dos Santos Souza</li>
+                <li>Pedro Henrique Freire dos Santos</li>
+                <li>Ruan Santo Andrade</li>
+            </ul>
+
+    </div>
+
+    <div id="social" class="tab-content">
+      <h2>Compartilhe seus pensamentos</h2>
+      <div class="post-box">
+        <textarea placeholder="Escreva aqui..."></textarea>
+        <button onclick="postMessage(this)">Postar</button>
+      </div>
+      <div id="posts"></div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 Orquídeas - Promovendo a saúde e o bem-estar masculino</footer>
+
+<script>
+const likertQuestions = [
+"Cuido da minha alimentação diariamente.","Faço atividades físicas regularmente.",
+"Durmo pelo menos 7 horas por noite.","Mantenho consultas médicas preventivas em dia.",
+"Dedico tempo para cuidar da minha saúde mental.","Evito consumir álcool ou fumo em excesso.",
+"Mantenho equilíbrio entre trabalho e lazer.","Procuro aprender sobre saúde e bem-estar.",
+"Sinto-me motivado a cuidar do meu corpo.","Compartilho meus sentimentos com pessoas de confiança."
+];
+const likertContainer=document.getElementById("likert-questions");
+likertQuestions.forEach((q,i)=>{
+likertContainer.innerHTML+=`<div class='likert-question'><label>${q}</label>
+<div class='likert-scale'><input type='radio' name='q${i}' value='1'>1
+<input type='radio' name='q${i}' value='2'>2
+<input type='radio' name='q${i}' value='3'>3
+<input type='radio' name='q${i}' value='4'>4
+<input type='radio' name='q${i}' value='5'>5</div></div>`;
+});
+function calcularLikert(){
+let total=0;let respostas=0;
+likertQuestions.forEach((_,i)=>{
+const selected=document.querySelector(`input[name=q${i}]:checked`);
+if(selected){total+=parseInt(selected.value);respostas++;}
+});
+if(respostas<likertQuestions.length){alert("Responda todas as perguntas!");return;}
+const percent=(total/(likertQuestions.length*5))*100;
+const resultDiv=document.getElementById("likert-result");
+if(percent<30){resultDiv.textContent="Seus hábitos podem melhorar! Invista em exercícios e cuide mais de si mesmo.";}
+else if(percent>60){resultDiv.textContent="Excelente! Continue com seus ótimos hábitos de saúde.";}
+else{resultDiv.textContent="Você está no caminho certo. Continue evoluindo!"}
+document.getElementById("cadastro-section").style.display="block";
+}
+function showTab(tabId){
+document.querySelectorAll(".tab-content").forEach(tc=>tc.classList.remove("active"));
+document.getElementById(tabId).classList.add("active");
+}
+function postMessage(button){
+const textarea=button.previousElementSibling;
+if(textarea.value.trim()==="")return;
+const postsDiv=document.getElementById("posts");
+const postDiv=document.createElement("div");
+postDiv.classList.add("post-box");
+postDiv.textContent=textarea.value;
+postsDiv.prepend(postDiv);
+textarea.value="";
+}
+document.getElementById("cadastro-form").addEventListener("submit",function(e){
+e.preventDefault();
+document.getElementById("cadastro-section").style.display="none";
+document.getElementById("likert-section").style.display="none";
+document.getElementById("conteudo-principal").style.display="block";
+document.getElementById("menu").style.display="flex";
+});
+</script>
+<script>
+function adicionarLembrete(tipo) {
+  const input = document.getElementById("lembrete" + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+  const lista = document.getElementById("lista" + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+  if (input.value.trim() === "") return;
+
+  const li = document.createElement("li");
+  li.textContent = input.value;
+  const btn = document.createElement("button");
+  btn.textContent = "❌";
+  btn.onclick = () => {
+    li.remove();
+    salvarLembretes(tipo);
+  };
+  li.appendChild(btn);
+  lista.appendChild(li);
+
+  salvarLembretes(tipo);
+  input.value = "";
+}
+
+function salvarLembretes(tipo) {
+  const lista = document.getElementById("lista" + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+  const lembretes = Array.from(lista.children).map(li => li.firstChild.textContent);
+  localStorage.setItem("lembretes_" + tipo, JSON.stringify(lembretes));
+}
+
+function carregarLembretes() {
+  ["fisico", "mental", "atividades"].forEach(tipo => {
+    const lista = document.getElementById("lista" + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+    const armazenados = JSON.parse(localStorage.getItem("lembretes_" + tipo) || "[]");
+    armazenados.forEach(txt => {
+      const li = document.createElement("li");
+      li.textContent = txt;
+      const btn = document.createElement("button");
+      btn.textContent = "❌";
+      btn.onclick = () => {
+        li.remove();
+        salvarLembretes(tipo);
+      };
+      li.appendChild(btn);
+      lista.appendChild(li);
+    });
+  });
+}
+
+window.onload = carregarLembretes;
+</script>
+</body>
+</html>
